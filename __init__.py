@@ -6,6 +6,8 @@ class RandomNumber(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
     @intent_file_handler('number.random.intent')
+    def initialize(self):
+        self.register_intent_file('number.random.intent', self.handle_number_random)
     def handle_number_random(self, message):
         num1 = message.data.get('num1')
         num2 = message.data.get('num2')
