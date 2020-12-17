@@ -8,6 +8,8 @@ class RandomNumber(MycroftSkill):
     @intent_file_handler('number.random.intent')
     def initialize(self):
         self.register_intent_file('number.random.intent', self.handle_number_random)
+        self.register_entity_file('num1.entity')
+        self.register_entity_file('num2.entity')
     def handle_number_random(self, message):
         num1 = message.data.get('num1')
         num2 = message.data.get('num2')
